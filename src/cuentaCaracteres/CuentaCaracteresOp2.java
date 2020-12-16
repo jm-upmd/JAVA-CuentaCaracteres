@@ -29,10 +29,10 @@ public class CuentaCaracteresOp2 {
 		while (!linea.equals(FIN)) {
 			for (int i = 0; i < linea.length(); i++) {
 				char c = linea.charAt(i);
-				if( (cont = listaCaracteres.get(c)) == null) {
+				if( (cont = listaCaracteres.get(c)) == null) { // si es la priemra ocurrencia del caracter
 					cont = 0;
 				}
-				listaCaracteres.put(c, ++cont);
+				listaCaracteres.put(c, ++cont); // incrementa contador y lo guarda como valor de la clave c
 			}
 			linea = teclado.nextLine();
 		}
