@@ -24,12 +24,15 @@ public class CuentaCaracteresOp2 {
 		System.out.println("Para terminar escribe @FIN@ como última línea");
 
 		String linea = teclado.nextLine();
-		int cont;
+		Integer cont;
+		
 		while (!linea.equals(FIN)) {
 			for (int i = 0; i < linea.length(); i++) {
 				char c = linea.charAt(i);
-				cont = listaCaracteres.containsKey(c) ? listaCaracteres.get(c) + 1 : 1;
-				listaCaracteres.put(c, cont);
+				if( (cont = listaCaracteres.get(c)) == null) {
+					cont = 0;
+				}
+				listaCaracteres.put(c, ++cont);
 			}
 			linea = teclado.nextLine();
 		}
